@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    
+        <link rel="stylesheet" href="styles.css">
+    <title>Wasm Demo!</title>
+</head>
+<body class="container mt-5">
+    <h1 class="text-center">Hello, to web assembly world</h1>
+
+    <div class="">
+        <p class="text-muted text-center">All requests go to <a href="https://unsplash.com/">Unsplash API</a></p>
+        <form>
+            <div class="form-row">
+                <div class="col">
+                    <label for="method">HTTP method</label>
+                    <select name="method" id="method" class="form-control">
+                        <option value="">Choose HTTP method</option>
+                        <option value="get">GET</option>
+                        <option value="post">POST</option>
+                        <option value="put">PUT</option>
+                        <option value="delete">DELETE</option>
+                    </select>
+                </div>
+
+                <div class="col">
+                    <label for="request">Request</label>
+                    <select name="request" id="request" class="form-control"></select>
+                </div>
+            </div>
+
+            <div id="div-photo-id" class="form-row hide-me">
+                <div class="col">
+                    <label for="photo_id">Photo Id</label>
+                    <input type="text" id="photo_id" name="photo_id" class="form-control">
+                </div>
+            </div>
+
+            <div id="div-search" class="form-row hide-me">
+                <div class="col">
+                    <label for="search">Search term</label>
+                    <input type="text" id="search" name="search" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <button type="submit" class="btn btn-primary mt-2">Send</button>
+            </div>
+        </form>
+
+        <hr>
+        <h1>Responses ...</h1>
+        <div id="data" class="row justify-content-between"></div>
+        <div id="errors"></div>
+    </div>
+
+    <script src="wasm_exec.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
