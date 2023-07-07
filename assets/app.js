@@ -129,7 +129,7 @@ const createCard = (photo) => {
 
 	const cardText = document.createElement("p")
 	cardText.classList.add("card-text")
-	cardText.textContent = `Photo Id: ${photo.id}\nUpdated at: ${photo.updated_at}`
+	cardText.textContent = `Photo Id: ${photo.id} \n Updated at: ${photo.updated_at}`
 	cardBody.append(cardText)
 
 	return card
